@@ -121,6 +121,8 @@
 /**
  * Style
  */
+    "max-depth": [2, 3],             // http://eslint.org/docs/rules/max-depth
+    "max-nested-callbacks": [2, 2],  // http://eslint.org/docs/rules/max-nested-callbacks
     "indent": [2, 2],                // http://eslint.org/docs/rules/
     "brace-style": [2,               // http://eslint.org/docs/rules/brace-style
       "1tbs", {
