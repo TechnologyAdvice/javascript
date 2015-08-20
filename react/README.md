@@ -27,7 +27,7 @@
   - **Extensions**: Use `.js` extension for React components.
   - **Filename**: Use PascalCase for filenames. E.g., `ReservationCard.js`.
   - **Reference Naming**: Use PascalCase for React components and camelCase for their instances:
-    ```javascript
+    ```jsx
     // bad
     const reservationCard = require('./ReservationCard');
 
@@ -42,7 +42,7 @@
     ```
 
     **Component Naming**: Use the filename as the component name. So `ReservationCard.js` should have a reference name of ReservationCard. However, for root components of a directory, use index.js as the filename and use the directory name as the component name:
-    ```javascript
+    ```jsx
     // bad
     const Footer = require('./Footer/Footer.js')
 
@@ -57,7 +57,7 @@
 ## Declaration
   - Do not use displayName for naming components, instead name the component by reference.
 
-    ```javascript
+    ```jsx
     // bad
     export default React.createClass({
       displayName: 'ReservationCard',
@@ -74,7 +74,7 @@
 ## Alignment
   - Follow these alignment styles for js syntax
 
-    ```javascript
+    ```jsx
     // bad
     <Foo superLongParam="bar"
          anotherSuperLongParam="baz" />
@@ -99,7 +99,7 @@
 
 ## Quotes
   - Always use double quotes (`"`) for JSX attributes, but single quotes for all other JavaScript.
-    ```javascript
+    ```jsx
     // bad
     <Foo bar='bar' />
 
@@ -115,7 +115,7 @@
 
 ## Spacing
   - Always include a single space in your self-closing tag.
-    ```javascript
+    ```jsx
     // bad
     <Foo/>
 
@@ -130,9 +130,18 @@
     <Foo />
     ```
 
+  - Do not pad curly braces in prop values.
+    ```jsx
+    // bad
+    <Foo bar={ this.props.bar }/>
+    
+    // good
+    <Foo bar={this.props.bar}/>
+    ```
+
 ## Props
   - Always use camelCase for prop names.
-    ```javascript
+    ```jsx
     // bad
     <Foo
       UserName="hello"
@@ -146,9 +155,22 @@
     />
     ```
 
+  - Use `&&` syntax in curly braces instead of ternaries when there is no else condition.
+    ```jsx
+    // bad
+    var bar = this.props.bar ? 'baz' : null;
+    <Foo bar={bar} />
+
+    // bad
+    <Foo bar={this.props.bar ? 'baz' : null}/>
+
+    // good
+    <Foo bar={this.props.bar && 'baz'}/>
+    ```
+
 ## Parentheses
   - Wrap JSX tags in parentheses when they span more than one line:
-    ```javascript
+    ```jsx
     /// bad
     render() {
       return <MyComponent className="long body" foo="bar">
@@ -174,7 +196,7 @@
 
 ## Tags
   - Always self-close tags that have no children.
-    ```javascript
+    ```jsx
     // bad
     <Foo className="stuff"></Foo>
 
@@ -183,7 +205,7 @@
     ```
 
   - If your component has multi-line properties, close its tag on a new line.
-    ```javascript
+    ```jsx
     // bad
     <Foo
       bar="bar"
@@ -198,7 +220,7 @@
 
 ## Methods
   - Do not use underscore prefix for internal methods of a react component.
-    ```javascript
+    ```jsx
     // bad
     React.createClass({
       _onClickSubmit() {
