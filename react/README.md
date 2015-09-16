@@ -35,10 +35,10 @@
     const ReservationCard = require('./ReservationCard');
 
     // bad
-    const ReservationItem = <ReservationCard />;
+    const ReservationCard = <ReservationCard />;
 
     // good
-    const reservationItem = <ReservationCard />;
+    const reservationCard = <ReservationCard />;
     ```
 
     **Component Naming**: Use the filename as the component name. So `ReservationCard.js` should have a reference name of ReservationCard. However, for root components of a directory, use index.js as the filename and use the directory name as the component name:
