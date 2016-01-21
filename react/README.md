@@ -18,7 +18,7 @@
 
 ## Basic Rules
 
-  - Only include one React component per file.
+  - Only include one React component per file, with the exception of container components.
   - Always use JSX syntax.
   - Do not use `React.createElement` unless you're initializing the app from a file that does not transform JSX.
 
